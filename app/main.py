@@ -3,10 +3,10 @@ from datetime import datetime
 import uvicorn
 import redis
 import logging
-from .config import settings
+from .config.config import settings
 from .routers import users, listing, auth, weather
-from . import models
-from .database import engine
+from .models import models
+from .database.database import engine
 
 models.Base.metadata.create_all(bind=engine)
 

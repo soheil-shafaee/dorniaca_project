@@ -1,6 +1,6 @@
 from fastapi import status, APIRouter, HTTPException
 from datetime import datetime, timedelta
-from ..config import settings
+from ..config.config import settings
 import requests
 import pandas as pd
 

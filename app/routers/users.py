@@ -1,7 +1,13 @@
 from fastapi import status, Depends, HTTPException, APIRouter, Response, Request
 from sqlalchemy.orm import Session
-from .. import models, schemas, utils, oauth2
-from ..database import get_db
+
+from ..oauth2 import oauth2
+
+from ..schemas import schemas
+
+from ..models import models
+from ..utils import utils
+from ..database.database import get_db
 from ..rate_limit import rate_limited
 
 router= APIRouter(prefix="/users", tags=["Users"])

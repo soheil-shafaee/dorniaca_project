@@ -2,8 +2,14 @@ from fastapi import APIRouter, Depends, status, HTTPException, Request
 from fastapi_limiter.depends import RateLimiter
 from fastapi.security.oauth2 import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from .. import models, utils, oauth2, schemas
-from ..database import get_db
+
+from ..oauth2 import oauth2
+
+from ..schemas import schemas
+
+from ..models import models
+from ..utils import utils
+from ..database.database import get_db
 
 whitelist_account = []
 

@@ -1,8 +1,12 @@
 from fastapi import Depends, HTTPException, status, APIRouter, Response, Request
 from sqlalchemy.orm import Session
 from datetime import datetime
-from .. import models, schemas, oauth2
-from ..database import get_db
+
+from ..schemas import schemas
+
+from ..models import models
+from ..oauth2 import oauth2
+from ..database.database import get_db
 from ..rate_limit import rate_limited
 
 
